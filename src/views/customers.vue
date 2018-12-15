@@ -17,7 +17,7 @@
       </b-col>
         </b-row>
 <br>
-        <b-table striped hover :items="customers" :fields="fields" :per-page="pageSize" :current-page="pageIndex"></b-table>
+        <b-table striped hover :items="customers" :filter="filter" :fields="fields" :per-page="pageSize" :current-page="pageIndex"></b-table>
         
         <b-pagination align="center" size="md" :total-rows="customers.length" :per-page="pageSize" v-model="pageIndex">
         </b-pagination>
@@ -37,6 +37,7 @@ export default {
       customers: [],
       pageSize: 10,
       pageIndex: 1,
+      filter: null,
       fields: [
         {
           key: "customer_id",
@@ -48,8 +49,7 @@ export default {
         },
         {
           key: "contact_name",
-          sortable: true,
-         
+          sortable: true
         },
         {
           key: "phone",
@@ -59,7 +59,15 @@ export default {
       ]
     };
   },
-  
+
+  computed: {
+    sortOptions () {
+      // Create an options list from our fields
+      return this.fields
+        .filter(f => f.sortable)
+        .map(f => { return { text: f.label, value: f.key } })
+    }
+  },
   mounted() {
     var instance = this;
     axios
