@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <nav class="navber navber-light bg-light">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="nav navber-nav">
-      <router-link to="/" class="nav-item nav-link active">Home</router-link> |
-      <router-link to="/about" class="nav-item nav-link "> About</router-link> |
+      <router-link to="/" class="nav-item nav-link active">Home</router-link> 
+      <router-link to="/about" class="nav-item nav-link "> About</router-link> 
       <router-link to="/customers" class="nav-item nav-link">Customers</router-link>
 
     </div>
     </nav>
 
-   <router-view/>
+    <router-view/>
   </div>
 </template>
 
