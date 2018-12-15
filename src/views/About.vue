@@ -5,7 +5,7 @@
                 controls
                 indicators
                 background="#ababab"
-                :interval="4000"
+                :interval="3500"
                 img-width="800"
                 img-height="480"
                 v-model="slide"
