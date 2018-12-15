@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <nav class="navber navber-expand navber-dark bg-dark">
+    <nav class="navber navber-light bg-light">
     <div class="nav navber-nav">
       <router-link to="/" class="nav-item nav-link active">Home</router-link> |
       <router-link to="/about" class="nav-item nav-link "> About</router-link> |
-      <router-link to="/products" class="nav-item nav-link ">Products</router-link> |
-      <router-link to="/users" class="nav-item nav-link">Users</router-link> |
       <router-link to="/customers" class="nav-item nav-link">Customers</router-link>
 
     </div>
     </nav>
-    <router-view/>
+
+   <router-view/>
   </div>
 </template>
 
